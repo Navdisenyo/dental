@@ -158,7 +158,7 @@ const closeMobile = () => {
             </div>
           </div>
 
-          <a href="#clinic" class="hover:text-brand-teal transition-colors py-2">Our Clinic</a>
+          <a href="#clinic" class="hover:text-brand-teal transition-colors py-2">Patient Results</a>
           <a href="#reviews" class="hover:text-brand-teal transition-colors py-2">Reviews</a>
           <a href="#contact" class="hover:text-brand-teal transition-colors py-2">Contact</a>
         </nav>
@@ -229,7 +229,7 @@ const closeMobile = () => {
             <span>Treatments & Services</span>
             <span class="text-xs text-brand-teal font-normal bg-brand-mint px-2 py-0.5 rounded-full">Explore</span>
           </a>
-          <a href="#clinic" class="py-2 border-b border-brand-border/40 hover:text-brand-teal" @click="closeMobile">Our Clinic & Video Tour</a>
+          <a href="#clinic" class="py-2 border-b border-brand-border/40 hover:text-brand-teal" @click="closeMobile">Patient Results (Before & After)</a>
           <a href="#doctor" class="py-2 border-b border-brand-border/40 hover:text-brand-teal" @click="closeMobile">Meet The Doctor</a>
           <a href="#reviews" class="py-2 border-b border-brand-border/40 hover:text-brand-teal flex justify-between items-center" @click="closeMobile">
             <span>Patient Reviews</span>

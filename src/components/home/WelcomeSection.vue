@@ -114,7 +114,7 @@ onMounted(() => {
               href="#clinic" 
               class="inline-flex items-center gap-2 text-sm font-semibold text-brand-teal-dark hover:text-brand-teal transition-colors group"
             >
-              <span>Discover Our Clinic & View Real Gallery</span>
+              <span>View Patient Transformations & Clinic Gallery</span>
               <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>

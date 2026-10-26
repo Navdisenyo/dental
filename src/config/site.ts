@@ -27,6 +27,21 @@ export interface FaqItem {
   category: string
 }
 
+export interface PatientTransformation {
+  id: string
+  title: string
+  subtitle: string
+  category: string
+  categoryLabel: string
+  patientTag: string
+  image: string
+  treatment: string
+  duration: string
+  concern: string
+  outcome: string
+  highlights: string[]
+}
+
 export interface SiteConfig {
   name: string
   subtitle: string
@@ -73,6 +88,7 @@ export interface SiteConfig {
   clinicFeatures: { title: string; description: string; icon: string }[]
   patientJourney: { step: string; title: string; desc: string }[]
   gallery: { title: string; category: string; image: string; wideImage: string; description: string }[]
+  transformations: PatientTransformation[]
   reviews: Review[]
   faqs: FaqItem[]
 }
@@ -326,6 +342,93 @@ export const siteConfig: SiteConfig = {
       image: "/assets/clinic/entrance-corridor.jpg",
       wideImage: "/assets/clinic/wide-entrance-corridor.jpg",
       description: "Spotless hygienic layout connecting treatment suites with modern ambient cove lighting."
+    }
+  ],
+
+  transformations: [
+    {
+      id: "case-1-braces-alignment",
+      title: "Braces On, Inhibitions Off",
+      subtitle: "Orthodontic Crowding Correction & Arch Leveling",
+      category: "orthodontics",
+      categoryLabel: "Orthodontics & Braces",
+      patientTag: "Bite & Crowding Correction",
+      image: "/assets/transformations/case-1-braces-alignment.jpg",
+      treatment: "Orthodontic Leveling & Alignment",
+      duration: "12 Months",
+      concern: "Irregularly positioned anterior teeth with overlapping lower and upper incisors, causing smile hesitation.",
+      outcome: "Harmonious arch form, balanced incisal edges, and a broad, confident, inhibition-free smile.",
+      highlights: ["Non-extraction treatment plan", "Relief of severe crowding", "Natural smile arc alignment"]
+    },
+    {
+      id: "case-2-smile-aesthetics",
+      title: "You Deserve Happy, Healthy Smiles",
+      subtitle: "Comprehensive Smile Realignment & Profile Harmony",
+      category: "orthodontics",
+      categoryLabel: "Orthodontics & Clear Aligners",
+      patientTag: "Smile Arc Harmony",
+      image: "/assets/transformations/case-2-smile-aesthetics.jpg",
+      treatment: "Specialist Orthodontic Realignment",
+      duration: "14 Months",
+      concern: "Flared anterior inclination, uneven smile line, and bite misalignment affecting aesthetic symmetry.",
+      outcome: "Gentle inward alignment, balanced facial aesthetics, healthy gumline margins, and radiant smile.",
+      highlights: ["Preserved natural tooth structures", "Enhanced facial aesthetics", "Optimized canine guidance"]
+    },
+    {
+      id: "case-3-gap-closure-diastema",
+      title: "Midline Diastema & Spacing Closure",
+      subtitle: "Aesthetic Front Gap Closure with Natural Proportion",
+      category: "gap-closure",
+      categoryLabel: "Aesthetic Dentistry & Gap Closure",
+      patientTag: "Central Gap Closure",
+      image: "/assets/transformations/case-3-gap-closure-diastema.jpg",
+      treatment: "Targeted Diastema Closure & Aesthetic Contouring",
+      duration: "Fast Clinical Protocol",
+      concern: "Prominent spacing (midline diastema) between the upper central incisors disrupting smile balance.",
+      outcome: "Completely closed central gap, perfect contact points, and radiant golden-proportion tooth symmetry.",
+      highlights: ["Zero gap remaining", "Natural enamel texture preserved", "Instant aesthetic transformation"]
+    },
+    {
+      id: "case-4-youth-crowding",
+      title: "Youthful Radiant Arch Expansion",
+      subtitle: "Narrow Arch Expansion & Incisor Leveling",
+      category: "orthodontics",
+      categoryLabel: "Orthodontics & Arch Leveling",
+      patientTag: "Arch Expansion & Alignment",
+      image: "/assets/transformations/case-4-youth-crowding.jpg",
+      treatment: "Orthodontic Alignment & Arch Development",
+      duration: "10 Months",
+      concern: "Constricted dental arch with rotated central incisors and dark buccal corridors on smiling.",
+      outcome: "Wide, luminous Hollywood smile line with eliminated buccal corridors and perfectly aligned teeth.",
+      highlights: ["Broad luminous smile display", "Smooth painless arch development", "Long-term stable retention"]
+    },
+    {
+      id: "case-5-complex-orthodontics",
+      title: "Complex High Canines & Severe Crowding",
+      subtitle: "Facial & Intraoral Transformation with Full Arch Alignment",
+      category: "complex",
+      categoryLabel: "Complex Orthodontics & Rehabilitation",
+      patientTag: "Ectopic Canine & Arch Rehab",
+      image: "/assets/transformations/case-5-complex-orthodontics.jpg",
+      treatment: "Specialist Multi-Vector Orthodontic Mechanics",
+      duration: "16 Months",
+      concern: "High ectopic canines, blocked-out lateral incisors, and severe upper arch space deficit.",
+      outcome: "Complete non-surgical alignment of canines into ideal arch position with textbook Class-I occlusion.",
+      highlights: ["Both ectopic canines successfully guided", "Ideal functional bite achieved", "Full facial aesthetic transformation"]
+    },
+    {
+      id: "case-6-profile-orthopaedics",
+      title: "Dentofacial Profile & Jaw Harmony",
+      subtitle: "Orthopedic Mandibular Advancement & Profile Realignment",
+      category: "dentofacial",
+      categoryLabel: "Dentofacial Orthopaedics",
+      patientTag: "Profile & Jaw Alignment",
+      image: "/assets/transformations/case-6-profile-orthopaedics.jpg",
+      treatment: "Dentofacial Orthopaedics & Mandibular Alignment",
+      duration: "14 Months",
+      concern: "Retrognathic / receded lower jaw profile with weak chin definition and strained lip posture.",
+      outcome: "Remarkably enhanced jawline projection, balanced facial profile, and effortless natural lip closure.",
+      highlights: ["Non-surgical orthopedic guidance", "Enhanced chin & jawline definition", "Harmonious lateral facial profile"]
     }
   ],
 

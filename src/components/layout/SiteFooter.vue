@@ -1,9 +1,18 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { MapPin, Phone, MessageCircle, Clock, Star, Heart, ArrowUp } from 'lucide-vue-next'
+import { MapPin, Phone, MessageCircle, Clock, Star, ArrowUp, Mail } from 'lucide-vue-next'
 import { siteConfig } from '../../config/site'
+import LegalModal from '../ui/LegalModal.vue'
 
 const currentYear = new Date().getFullYear()
+
+const isLegalModalOpen = ref(false)
+const legalModalTab = ref<'terms' | 'privacy'>('terms')
+
+const openLegalModal = (tab: 'terms' | 'privacy') => {
+  legalModalTab.value = tab
+  isLegalModalOpen.value = true
+}
 
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -56,10 +65,26 @@ const scrollToTop = () => {
             <li><a href="#treatments" class="hover:text-white transition-colors">Treatments</a></li>
             <li><a href="#why-us" class="hover:text-white transition-colors">Why Choose Us</a></li>
             <li><a href="#doctor" class="hover:text-white transition-colors">Meet Dr. Achal</a></li>
-            <li><a href="#clinic" class="hover:text-white transition-colors">Clinic Gallery & Tour</a></li>
-            <li><a href="#reviews" class="hover:text-white transition-colors">Patient Reviews</a></li>
             <li><a href="#appointment" class="hover:text-white transition-colors">Book Appointment</a></li>
             <li><a href="#contact" class="hover:text-white transition-colors">Location & Contact</a></li>
+            <li>
+              <button 
+                type="button" 
+                class="hover:text-white transition-colors text-left flex items-center gap-1 cursor-pointer"
+                @click="openLegalModal('terms')"
+              >
+                Terms & Conditions
+              </button>
+            </li>
+            <li>
+              <button 
+                type="button" 
+                class="hover:text-white transition-colors text-left flex items-center gap-1 cursor-pointer"
+                @click="openLegalModal('privacy')"
+              >
+                Privacy Policy
+              </button>
+            </li>
           </ul>
         </div>
 
@@ -107,6 +132,13 @@ const scrollToTop = () => {
               </a>
             </div>
 
+            <div class="flex items-center gap-2.5">
+              <Mail class="w-4 h-4 text-brand-teal shrink-0" />
+              <a :href="'mailto:' + siteConfig.contact.email" class="hover:text-white font-medium">
+                {{ siteConfig.contact.email }}
+              </a>
+            </div>
+
             <div class="flex items-start gap-2.5 pt-2 border-t border-brand-teal/20">
               <Clock class="w-4 h-4 text-brand-teal shrink-0 mt-0.5" />
               <div>
@@ -133,7 +165,21 @@ const scrollToTop = () => {
           >Navdisenyo</a>
         </div>
 
-        <div class="flex items-center gap-6">
+        <div class="flex flex-wrap items-center gap-4 sm:gap-6">
+          <button 
+            type="button" 
+            class="hover:text-brand-mint transition-colors cursor-pointer"
+            @click="openLegalModal('terms')"
+          >
+            Terms & Conditions
+          </button>
+          <button 
+            type="button" 
+            class="hover:text-brand-mint transition-colors cursor-pointer"
+            @click="openLegalModal('privacy')"
+          >
+            Privacy Policy
+          </button>
           <a :href="siteConfig.trust.googleSearchReviewUrl" target="_blank" rel="noopener noreferrer" class="hover:text-brand-mint transition-colors">
             Google Business Listing
           </a>
@@ -142,7 +188,7 @@ const scrollToTop = () => {
           </a>
           <button 
             type="button"
-            class="inline-flex items-center gap-1.5 hover:text-white transition-colors"
+            class="inline-flex items-center gap-1.5 hover:text-white transition-colors cursor-pointer"
             @click="scrollToTop"
             aria-label="Scroll back to top"
           >
@@ -158,5 +204,12 @@ const scrollToTop = () => {
       </div>
 
     </div>
+
+    <!-- Legal Modal for Terms & Conditions and Privacy Policy -->
+    <LegalModal 
+      :is-open="isLegalModalOpen" 
+      :initial-tab="legalModalTab" 
+      @close="isLegalModalOpen = false" 
+    />
   </footer>
 </template>

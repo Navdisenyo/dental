@@ -44,7 +44,7 @@ onMounted(() => {
     </h3>
 
     <p class="text-sm text-brand-muted leading-relaxed mb-6">
-      We have received your consultation request for <strong>{{ submission?.treatment }}</strong> on <strong>{{ submission?.preferredDate }}</strong> ({{ submission?.preferredTime }}). Our reception desk at Geetai Sankul, Kothrud will review schedule availability and contact you shortly.
+      We have received your consultation request for <strong>{{ submission?.treatment }}</strong> on <strong>{{ submission?.preferredDate }}</strong> ({{ submission?.preferredTime }}). Lead information has been dispatched to our clinic team at <strong>{{ siteConfig.contact.email }}</strong> and our reception desk will contact you shortly.
     </p>
 
     <!-- Appointment Summary Box -->

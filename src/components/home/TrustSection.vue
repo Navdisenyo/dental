@@ -63,7 +63,7 @@ onMounted(() => {
         <!-- Trust Metric 2: Experience -->
         <div class="trust-card flex flex-col items-center sm:items-start text-center sm:text-left">
           <div class="flex items-center gap-1.5 mb-1.5">
-            <span class="text-2xl sm:text-3xl font-extrabold text-brand-charcoal tracking-tight">20+</span>
+            <span class="text-2xl sm:text-3xl font-extrabold text-brand-charcoal tracking-tight">{{ siteConfig.trust.experienceYears }}</span>
             <span class="text-lg font-bold text-brand-teal">Years</span>
           </div>
           <div class="text-xs font-semibold text-brand-teal-dark">Clinical Practice</div>

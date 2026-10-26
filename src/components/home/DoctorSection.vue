@@ -2,7 +2,7 @@
 import { ref, onMounted } from 'vue'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { Award, CheckCircle2, Calendar, MessageCircle, Stethoscope, Sparkles } from 'lucide-vue-next'
+import { Award, Calendar, Stethoscope, Sparkles } from 'lucide-vue-next'
 import { siteConfig } from '../../config/site'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -49,17 +49,17 @@ onMounted(() => {
         <!-- Left: Real Consultation Office Visual (5 cols) -->
         <div class="lg:col-span-5 relative bg-brand-mint overflow-hidden min-h-[320px] lg:min-h-full">
           <img 
-            src="/assets/clinic/consultation-office.jpg" 
-            alt="Dr. Achal Agarwal Consultation Office at OneCare Aesthetix Clinic Kothrud Pune" 
-            class="w-full h-full object-cover object-center"
+            src="/assets/clinic/dr-achal-agarwal.jpg" 
+            alt="Dr. Achal Agarwal - Dentist, Orthodontist and Dentofacial Orthopaedist at OneCare Aesthetix Clinic Kothrud Pune" 
+            class="w-full h-full object-cover object-[center_55%]"
           />
-          <div class="absolute inset-0 bg-gradient-to-t from-brand-teal-deep/85 via-brand-teal-deep/30 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-teal-deep/85 via-brand-teal-deep/25 to-transparent"></div>
 
           <!-- Doctor Tag & Experience on Image -->
           <div class="absolute bottom-6 left-6 right-6 text-white">
             <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-brand-mint text-xs font-semibold mb-2">
               <Award class="w-3.5 h-3.5" />
-              <span>20+ Years Clinical Practice</span>
+              <span>9+ Years Clinical Practice</span>
             </div>
             <h3 class="text-2xl font-bold">{{ siteConfig.leadDoctor.name }}</h3>
             <p class="text-xs text-brand-mint/90 font-medium mt-0.5">
@@ -77,7 +77,7 @@ onMounted(() => {
             </div>
 
             <h3 class="text-2xl sm:text-3xl font-extrabold text-brand-charcoal mb-4">
-              Care Guided by Two Decades of <br />
+              Care Guided by 9+ Years of <br />
               <span class="font-serif italic font-normal text-brand-teal-dark">Clinical Dedication.</span>
             </h3>
 
@@ -107,23 +107,13 @@ onMounted(() => {
               {{ siteConfig.leadDoctor.note }}
             </div>
 
-            <div class="flex items-center gap-3 w-full sm:w-auto">
+            <div class="w-full sm:w-auto">
               <a 
                 href="#appointment"
-                class="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-brand-teal-dark hover:bg-brand-teal text-white text-xs font-semibold shadow-soft transition-all"
+                class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-brand-teal-dark hover:bg-brand-teal text-white text-xs font-semibold shadow-soft hover:shadow-card hover:-translate-y-0.5 transition-all"
               >
                 <Calendar class="w-3.5 h-3.5" />
                 <span>Book With Doctor</span>
-              </a>
-
-              <a 
-                :href="siteConfig.contact.whatsappLink"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="p-2.5 rounded-xl bg-brand-mint text-brand-teal-dark hover:bg-brand-teal/20 transition-colors"
-                title="WhatsApp Consultation Enquiry"
-              >
-                <MessageCircle class="w-4 h-4 text-brand-teal" />
               </a>
             </div>
           </div>

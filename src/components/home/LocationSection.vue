@@ -124,13 +124,13 @@ import { siteConfig } from '../../config/site'
         </div>
 
         <!-- Right Column: Interactive Map & Landmark Guide (7 cols) -->
-        <div class="lg:col-span-7 bg-brand-mint/30 rounded-3xl overflow-hidden border border-brand-border/80 shadow-soft flex flex-col justify-between min-h-[420px]">
+        <div class="lg:col-span-7 bg-white rounded-3xl overflow-hidden border border-brand-border/80 shadow-soft flex flex-col h-full min-h-[460px]">
           
-          <!-- Google Map Embed -->
-          <div class="relative w-full h-80 sm:h-96 bg-brand-border/40 overflow-hidden">
+          <!-- Google Map Embed (fills available space seamlessly with zero gap) -->
+          <div class="relative w-full flex-1 min-h-[360px] sm:min-h-[420px] bg-brand-border/20 overflow-hidden">
             <iframe 
               title="OneCare Aesthetix Clinic Location Map"
-              class="w-full h-full border-0"
+              class="w-full h-full border-0 absolute inset-0"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.568472895697!2d73.8055112!3d18.5074127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf308401610f%3A0x50c19bf8637527f7!2sOneCare%20Aesthetix%20Clinic!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
               allowfullscreen
               loading="lazy"
@@ -139,7 +139,7 @@ import { siteConfig } from '../../config/site'
           </div>
 
           <!-- Bottom Location Highlights -->
-          <div class="p-6 bg-white border-t border-brand-border flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="p-5 sm:p-6 bg-white border-t border-brand-border flex flex-col sm:flex-row items-center justify-between gap-4 shrink-0">
             <div class="flex items-center gap-3">
               <div class="w-8 h-8 rounded-full bg-brand-mint text-brand-teal-dark flex items-center justify-center shrink-0">
                 <CheckCircle class="w-4 h-4 text-brand-teal" />
@@ -153,7 +153,7 @@ import { siteConfig } from '../../config/site'
               :href="siteConfig.contact.mapsUrl"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-xs font-bold text-brand-teal-dark hover:underline flex items-center gap-1 shrink-0"
+              class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-brand-mint/70 hover:bg-brand-mint text-xs font-bold text-brand-teal-dark transition-all shrink-0 border border-brand-teal/20"
             >
               <span>Open in Google Maps App</span>
               <span>↗</span>

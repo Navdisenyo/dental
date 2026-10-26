@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Calendar, Phone, MessageCircle, MapPin, Clock, ShieldCheck, HeartPulse } from 'lucide-vue-next'
+import { Calendar, Phone, MessageCircle, MapPin, Clock, ShieldCheck, HeartPulse, Mail } from 'lucide-vue-next'
 import { siteConfig } from '../../config/site'
 import AppointmentForm from '../booking/AppointmentForm.vue'
 </script>
@@ -65,21 +65,43 @@ import AppointmentForm from '../booking/AppointmentForm.vue'
             </div>
           </div>
 
-          <!-- Direct WhatsApp Channel -->
-          <div class="p-5 rounded-3xl bg-brand-teal-deep text-white w-full shadow-card flex items-center justify-between gap-4">
-            <div>
-              <div class="text-xs text-brand-teal-light uppercase tracking-wider font-semibold">Prefer WhatsApp?</div>
-              <div class="text-sm font-bold mt-0.5">Message our reception directly</div>
+          <!-- Direct Communication Channels: WhatsApp & Direct Email -->
+          <div class="space-y-3 w-full mb-2">
+            <!-- Direct WhatsApp Channel -->
+            <div class="p-5 rounded-3xl bg-brand-teal-deep text-white w-full shadow-card flex items-center justify-between gap-4">
+              <div>
+                <div class="text-xs text-brand-teal-light uppercase tracking-wider font-semibold">Prefer WhatsApp?</div>
+                <div class="text-sm font-bold mt-0.5">Message our reception directly</div>
+              </div>
+
+              <a 
+                :href="siteConfig.contact.whatsappLink"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="px-4 py-2.5 rounded-xl bg-brand-teal hover:bg-brand-teal-light hover:text-brand-teal-deep text-white font-semibold text-xs transition-all shrink-0 flex items-center gap-1.5"
+              >
+                <MessageCircle class="w-4 h-4" />
+                <span>WhatsApp Now</span>
+              </a>
             </div>
 
+            <!-- Direct Email Channel -->
             <a 
-              :href="siteConfig.contact.whatsappLink"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="px-4 py-2.5 rounded-xl bg-brand-teal hover:bg-brand-teal-light hover:text-brand-teal-deep text-white font-semibold text-xs transition-all shrink-0 flex items-center gap-1.5"
+              :href="'mailto:' + siteConfig.contact.email"
+              class="p-4 rounded-3xl bg-white border border-brand-border/80 shadow-soft w-full flex items-center justify-between gap-3 group hover:border-brand-teal hover:shadow-card transition-all"
             >
-              <MessageCircle class="w-4 h-4" />
-              <span>WhatsApp Now</span>
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-2xl bg-brand-mint text-brand-teal-dark flex items-center justify-center shrink-0 group-hover:bg-brand-teal group-hover:text-white transition-colors">
+                  <Mail class="w-4 h-4" />
+                </div>
+                <div class="text-left">
+                  <div class="text-[11px] text-brand-muted uppercase tracking-wider font-semibold">Clinic Email Leads</div>
+                  <div class="text-xs font-bold text-brand-charcoal group-hover:text-brand-teal-dark transition-colors">
+                    {{ siteConfig.contact.email }}
+                  </div>
+                </div>
+              </div>
+              <span class="text-xs font-semibold text-brand-teal-dark group-hover:translate-x-1 transition-transform">Email Us →</span>
             </a>
           </div>
 

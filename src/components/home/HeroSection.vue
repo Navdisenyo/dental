@@ -4,8 +4,6 @@ import gsap from 'gsap'
 import { 
   Calendar, 
   MessageCircle, 
-  Star, 
-  MapPin, 
   Sparkles, 
   Play, 
   CheckCircle2, 
@@ -51,12 +49,6 @@ onMounted(() => {
       stagger: 0.1,
       duration: 0.7
     }, '-=0.5')
-    .from('.hero-trust-badge', {
-      opacity: 0,
-      scale: 0.95,
-      stagger: 0.1,
-      duration: 0.6
-    }, '-=0.4')
     .from('.hero-visual-card', {
       opacity: 0,
       scale: 0.94,
@@ -120,7 +112,7 @@ onUnmounted(() => {
           </p>
 
           <!-- Primary CTAs -->
-          <div class="hero-cta flex flex-wrap items-center gap-4 w-full sm:w-auto mb-10">
+          <div class="hero-cta flex flex-wrap items-center gap-4 w-full sm:w-auto">
             <a 
               href="#appointment"
               class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-2xl bg-brand-teal-dark hover:bg-brand-teal text-white font-semibold shadow-card hover:shadow-float hover:-translate-y-0.5 active:translate-y-0 transition-all text-sm group"
@@ -139,54 +131,6 @@ onUnmounted(() => {
               <MessageCircle class="w-4 h-4 text-brand-teal" />
               <span>Chat on WhatsApp</span>
             </a>
-          </div>
-
-          <!-- Trust Badges Under Hero -->
-          <div class="w-full pt-6 border-t border-brand-border/80 flex flex-wrap items-center gap-6 sm:gap-8">
-            <!-- Google Rating -->
-            <a 
-              :href="siteConfig.trust.googleSearchReviewUrl"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="hero-trust-badge flex items-center gap-3 group"
-              title="View genuine Google reviews"
-            >
-              <div class="flex items-center justify-center w-11 h-11 rounded-xl bg-white shadow-soft border border-brand-border group-hover:border-brand-teal transition-colors">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="w-5 h-auto" />
-              </div>
-              <div>
-                <div class="flex items-center gap-1">
-                  <span class="text-base font-bold text-brand-charcoal">4.9</span>
-                  <div class="flex text-amber-400">
-                    <Star v-for="i in 5" :key="i" class="w-3.5 h-3.5 fill-current" />
-                  </div>
-                </div>
-                <div class="text-xs text-brand-muted">Based on 75+ Google reviews</div>
-              </div>
-            </a>
-
-            <!-- Clinic Location -->
-            <div class="hero-trust-badge flex items-center gap-3">
-              <div class="flex items-center justify-center w-11 h-11 rounded-xl bg-brand-mint text-brand-teal-dark border border-brand-teal/20">
-                <MapPin class="w-5 h-5 text-brand-teal-dark" />
-              </div>
-              <div>
-                <div class="text-sm font-semibold text-brand-charcoal">Geetai Sankul, Kothrud</div>
-                <div class="text-xs text-brand-muted">Near Ideal Colony, Paud Road</div>
-              </div>
-            </div>
-
-            <!-- Doctor Experience -->
-            <div class="hero-trust-badge hidden xl:flex items-center gap-3">
-              <div class="flex items-center justify-center w-11 h-11 rounded-xl bg-brand-mint text-brand-teal-dark border border-brand-teal/20">
-                <Sparkles class="w-5 h-5 text-brand-teal-dark" />
-              </div>
-              <div>
-                <div class="text-sm font-semibold text-brand-charcoal">20+ Years Expertise</div>
-                <div class="text-xs text-brand-muted">Led by Dr. Achal Agarwal</div>
-              </div>
-            </div>
-
           </div>
 
         </div>

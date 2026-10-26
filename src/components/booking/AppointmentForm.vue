@@ -40,7 +40,7 @@ const {
           Request a Consultation
         </h3>
         <p class="text-xs sm:text-sm text-brand-muted">
-          Fill in your details below. Our team in Kothrud will check schedule availability and reach out to confirm your preferred slot.
+          Fill in your details below. Booking details and leads are securely delivered directly to our team at <strong class="text-brand-charcoal font-semibold">{{ siteConfig.contact.email }}</strong> to confirm your slot.
         </p>
       </div>
 

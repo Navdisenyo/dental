@@ -89,7 +89,7 @@ export const siteConfig: SiteConfig = {
     phoneClean: "9834891463",
     whatsappNumber: "919834891463",
     whatsappLink: "https://wa.me/919834891463",
-    email: "contact@onecareaesthetix.com",
+    email: "teamonecareaesthetix@gmail.com",
     address: {
       suite: "Shop No. 204, 2nd Floor, Geetai Sankul",
       street: "Paud Road, near Ideal Colony",
@@ -112,21 +112,21 @@ export const siteConfig: SiteConfig = {
     googleRating: "4.9",
     maxRating: "5.0",
     reviewCount: "75+",
-    experienceYears: "20+",
+    experienceYears: "9+",
     locationHighlight: "Ideal Colony, Kothrud",
     googleSearchReviewUrl: "https://www.google.com/search?q=one-care-aesthetix-clinic"
   },
 
   leadDoctor: {
     name: "Dr. Achal Agarwal",
-    title: "Senior Dental Surgeon & Aesthetic Consultant",
-    experience: "20+ Years of Clinical Practice",
-    bio: "With over two decades of dedicated practice, Dr. Achal Agarwal leads OneCare Aesthetix Clinic with an unwavering commitment to patient comfort, gentle dentistry, and harmonious aesthetic facial harmony. Every patient receives attentive, honest evaluation without rush.",
+    title: "Dentist, Orthodontist & Dentofacial Orthopaedist",
+    experience: "9+ Years Clinical Practice",
+    bio: "Dr. Achal Agarwal is a Dentist, Orthodontist, and Dentofacial Orthopaedist dedicated to creating healthy, confident, and beautiful smiles through personalised, evidence-based dental care. With a BDS from KLE Dental College and an MDS from Maratha Mandal Dental College, affiliated with Rajiv Gandhi University of Health Sciences (RGUHS), Dr. Agarwal specialises in orthodontic treatments, braces, clear aligners, smile transformations, and comprehensive dental rehabilitation. Her approach combines clinical expertise, modern treatment techniques, and a patient-centric philosophy to deliver care tailored to each individual’s needs, goals, and long-term oral health. At OneCare Aesthetix Clinic, Kothrud, Pune, she is committed to making every patient’s journey comfortable, transparent, and focused on lasting results—because a beautiful smile is not just about aesthetics; it is about confidence, function, and overall well-being.",
     specialties: [
-      "Aesthetic Smile Design",
-      "Restorative Dentistry & Crowns",
-      "Dental Implant Planning",
-      "Preventive & Family Oral Health"
+      "Orthodontics & Clear Aligners",
+      "Smile Transformations & Rehabilitation",
+      "Dentofacial Orthopaedics",
+      "Evidence-Based Dental Care"
     ],
     note: "Consultations by appointment to ensure dedicated one-on-one clinical attention."
   },
@@ -141,7 +141,7 @@ export const siteConfig: SiteConfig = {
       benefits: ["Facial balance analysis", "Minimal tooth reduction", "Predictable mockups before treatment"],
       duration: "2-3 Sessions",
       icon: "Sparkles",
-      image: "/assets/clinic/wide-clinic-panoramic-suite.jpg"
+      image: "/assets/treatments/digital-smile-design.jpg"
     },
     {
       id: "teeth-whitening",
@@ -152,7 +152,7 @@ export const siteConfig: SiteConfig = {
       benefits: ["Immediate visible shade improvement", "Enamel-safe desensitizing formulation", "Long-lasting radiant results"],
       duration: "45-60 Mins",
       icon: "Sun",
-      image: "/assets/clinic/wide-dental-chair.jpg"
+      image: "/assets/treatments/teeth-whitening.jpg"
     },
     {
       id: "dental-implants",
@@ -163,7 +163,7 @@ export const siteConfig: SiteConfig = {
       benefits: ["Lifelong durability", "Preserves natural jaw structure", "Seamless chewing comfort"],
       duration: "Multi-stage planned care",
       icon: "ShieldCheck",
-      image: "/assets/clinic/wide-advanced-equipment.jpg"
+      image: "/assets/treatments/dental-implants.jpg"
     },
     {
       id: "crowns-veneers",
@@ -174,7 +174,7 @@ export const siteConfig: SiteConfig = {
       benefits: ["Stain resistant porcelain", "Ultra-thin precision fitting", "Reinforces fragile teeth"],
       duration: "2 Visits",
       icon: "Gem",
-      image: "/assets/clinic/wide-consultation-office.jpg"
+      image: "/assets/treatments/crowns-veneers.jpg"
     },
     {
       id: "braces-aligners",
@@ -185,7 +185,7 @@ export const siteConfig: SiteConfig = {
       benefits: ["Virtually invisible wear", "Removable for meals and brushing", "Computerized progress tracking"],
       duration: "6-18 Months",
       icon: "Smile",
-      image: "/assets/clinic/wide-operatory-daylight.jpg"
+      image: "/assets/treatments/clear-aligners.jpg"
     },
     {
       id: "root-canal",
@@ -196,7 +196,7 @@ export const siteConfig: SiteConfig = {
       benefits: ["Immediate pain relief", "Saves natural tooth structure", "Single or two-sitting completion"],
       duration: "1-2 Visits",
       icon: "Activity",
-      image: "/assets/clinic/wide-dental-chair.jpg"
+      image: "/assets/treatments/root-canal.jpg"
     },
     {
       id: "facial-aesthetics",
@@ -207,7 +207,7 @@ export const siteConfig: SiteConfig = {
       benefits: ["Clinical sterile protocols", "Medical-grade aesthetic lasers", "Restores natural skin glow"],
       duration: "Custom plan",
       icon: "HeartPulse",
-      image: "/assets/clinic/wide-facial-aesthetics-suite.jpg"
+      image: "/assets/treatments/facial-aesthetics.jpg"
     },
     {
       id: "pediatric-dentistry",
@@ -218,7 +218,7 @@ export const siteConfig: SiteConfig = {
       benefits: ["Gentle child-friendly pacing", "Fluoride & pit fissure sealants", "Habit breaking counseling"],
       duration: "30-45 Mins",
       icon: "Baby",
-      image: "/assets/clinic/wide-reception-lounge.jpg"
+      image: "/assets/treatments/pediatric-care.jpg"
     },
     {
       id: "preventive-cleaning",
@@ -229,7 +229,7 @@ export const siteConfig: SiteConfig = {
       benefits: ["Prevents gum recession", "Removes stubborn calculus", "Immediate fresh mouth feeling"],
       duration: "30-45 Mins",
       icon: "Droplets",
-      image: "/assets/clinic/wide-entrance-corridor.jpg"
+      image: "/assets/treatments/ultrasonic-cleaning.jpg"
     }
   ],
 

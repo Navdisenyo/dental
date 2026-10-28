@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { MapPin, Phone, MessageCircle, Clock, Star, ArrowUp, Mail } from 'lucide-vue-next'
+import { useRoute, RouterLink } from 'vue-router'
+import { MapPin, Phone, MessageCircle, Clock, Star, ArrowUp, Mail, BookOpen, Settings } from 'lucide-vue-next'
 import { siteConfig } from '../../config/site'
 import LegalModal from '../ui/LegalModal.vue'
 
+const route = useRoute()
 const currentYear = new Date().getFullYear()
 
 const isLegalModalOpen = ref(false)
@@ -16,6 +18,13 @@ const openLegalModal = (tab: 'terms' | 'privacy') => {
 
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' })
+}
+
+const getSectionHref = (hash: string) => {
+  if (route.path === '/') {
+    return hash
+  }
+  return `/${hash}`
 }
 </script>
 
@@ -60,13 +69,25 @@ const scrollToTop = () => {
             Navigation
           </h4>
           <ul class="space-y-2.5 text-xs text-brand-mint/80">
-            <li><a href="#home" class="hover:text-white transition-colors">Home</a></li>
-            <li><a href="#about" class="hover:text-white transition-colors">About Us</a></li>
-            <li><a href="#treatments" class="hover:text-white transition-colors">Treatments</a></li>
-            <li><a href="#why-us" class="hover:text-white transition-colors">Why Choose Us</a></li>
-            <li><a href="#doctor" class="hover:text-white transition-colors">Meet Dr. Achal</a></li>
-            <li><a href="#appointment" class="hover:text-white transition-colors">Book Appointment</a></li>
-            <li><a href="#contact" class="hover:text-white transition-colors">Location & Contact</a></li>
+            <li><RouterLink to="/" class="hover:text-white transition-colors">Home</RouterLink></li>
+            <li><a :href="getSectionHref('#about')" class="hover:text-white transition-colors">About Us</a></li>
+            <li><a :href="getSectionHref('#treatments')" class="hover:text-white transition-colors">Treatments</a></li>
+            <li>
+              <RouterLink to="/blog" class="text-emerald-300 hover:text-white transition-colors font-semibold flex items-center gap-1.5">
+                <span>Dental Blog</span>
+                <span class="text-[9px] bg-brand-teal/40 text-white px-1.5 py-0.2 rounded">Guides</span>
+              </RouterLink>
+            </li>
+            <li><a :href="getSectionHref('#clinic')" class="hover:text-white transition-colors">Before & After</a></li>
+            <li><a :href="getSectionHref('#doctor')" class="hover:text-white transition-colors">Meet Dr. Achal</a></li>
+            <li><a :href="getSectionHref('#appointment')" class="hover:text-white transition-colors">Book Appointment</a></li>
+            <li><a :href="getSectionHref('#contact')" class="hover:text-white transition-colors">Location & Contact</a></li>
+            <li>
+              <RouterLink to="/admin" class="hover:text-white text-brand-mint/50 transition-colors flex items-center gap-1 text-[11px] pt-1 border-t border-white/10">
+                <Settings class="w-3 h-3 text-brand-teal" />
+                <span>Doctor Admin Portal</span>
+              </RouterLink>
+            </li>
             <li>
               <button 
                 type="button" 

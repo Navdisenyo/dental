@@ -1,18 +1,20 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
+import { useRoute, RouterLink } from 'vue-router'
 import { 
   Menu, 
   X, 
-  Phone, 
   ChevronDown, 
   Calendar, 
   MessageCircle, 
   Sparkles, 
   ShieldCheck, 
-  HeartPulse 
+  HeartPulse,
+  BookOpen
 } from 'lucide-vue-next'
 import { siteConfig } from '../../config/site'
 
+const route = useRoute()
 const isScrolled = ref(false)
 const mobileMenuOpen = ref(false)
 const treatmentsDropdownOpen = ref(false)
@@ -33,6 +35,13 @@ const closeMobile = () => {
   mobileMenuOpen.value = false
   treatmentsDropdownOpen.value = false
 }
+
+const getSectionHref = (hash: string) => {
+  if (route.path === '/') {
+    return hash
+  }
+  return `/${hash}`
+}
 </script>
 
 <template>
@@ -48,8 +57,8 @@ const closeMobile = () => {
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between gap-4">
         <!-- Brand Logo -->
-        <a 
-          href="#home" 
+        <RouterLink 
+          to="/" 
           class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-brand-teal rounded-lg p-1"
           aria-label="OneCare Aesthetix Clinic Home"
         >
@@ -58,12 +67,12 @@ const closeMobile = () => {
             alt="OneCare Aesthetix Clinic — Dental and Facial Aesthetics" 
             class="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-102"
           />
-        </a>
+        </RouterLink>
 
         <!-- Desktop Navigation -->
-        <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-brand-charcoal" aria-label="Main Navigation">
-          <a href="#home" class="hover:text-brand-teal transition-colors py-2">Home</a>
-          <a href="#about" class="hover:text-brand-teal transition-colors py-2">About Us</a>
+        <nav class="hidden lg:flex items-center gap-6 xl:gap-7 text-sm font-medium text-brand-charcoal" aria-label="Main Navigation">
+          <RouterLink to="/" class="hover:text-brand-teal transition-colors py-2">Home</RouterLink>
+          <a :href="getSectionHref('#about')" class="hover:text-brand-teal transition-colors py-2">About Us</a>
 
           <!-- Treatments Mega Dropdown -->
           <div 
@@ -91,7 +100,7 @@ const closeMobile = () => {
               </div>
               <div class="grid grid-cols-2 gap-2">
                 <a 
-                  href="#treatments" 
+                  :href="getSectionHref('#treatments')" 
                   class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-brand-mint/50 transition-colors group/item"
                   @click="treatmentsDropdownOpen = false"
                 >
@@ -105,7 +114,7 @@ const closeMobile = () => {
                 </a>
 
                 <a 
-                  href="#treatments" 
+                  :href="getSectionHref('#treatments')" 
                   class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-brand-mint/50 transition-colors group/item"
                   @click="treatmentsDropdownOpen = false"
                 >
@@ -119,7 +128,7 @@ const closeMobile = () => {
                 </a>
 
                 <a 
-                  href="#treatments" 
+                  :href="getSectionHref('#treatments')" 
                   class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-brand-mint/50 transition-colors group/item"
                   @click="treatmentsDropdownOpen = false"
                 >
@@ -133,7 +142,7 @@ const closeMobile = () => {
                 </a>
 
                 <a 
-                  href="#treatments" 
+                  :href="getSectionHref('#treatments')" 
                   class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-brand-mint/50 transition-colors group/item"
                   @click="treatmentsDropdownOpen = false"
                 >
@@ -148,7 +157,7 @@ const closeMobile = () => {
               </div>
               <div class="mt-2 pt-2 border-t border-brand-border/60 text-center">
                 <a 
-                  href="#treatments" 
+                  :href="getSectionHref('#treatments')" 
                   class="text-xs font-semibold text-brand-teal-dark hover:text-brand-teal hover:underline inline-flex items-center gap-1"
                   @click="treatmentsDropdownOpen = false"
                 >
@@ -158,9 +167,20 @@ const closeMobile = () => {
             </div>
           </div>
 
-          <a href="#clinic" class="hover:text-brand-teal transition-colors py-2">Patient Results</a>
-          <a href="#reviews" class="hover:text-brand-teal transition-colors py-2">Reviews</a>
-          <a href="#contact" class="hover:text-brand-teal transition-colors py-2">Contact</a>
+          <a :href="getSectionHref('#clinic')" class="hover:text-brand-teal transition-colors py-2">Patient Results</a>
+          <a :href="getSectionHref('#reviews')" class="hover:text-brand-teal transition-colors py-2">Reviews</a>
+          
+          <!-- Blog Navigation Link -->
+          <RouterLink 
+            to="/blog" 
+            class="inline-flex items-center gap-1 hover:text-brand-teal transition-colors py-2 font-semibold"
+            :class="{ 'text-brand-teal': route.path.startsWith('/blog') }"
+          >
+            <span>Blog</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>
+          </RouterLink>
+
+          <a :href="getSectionHref('#contact')" class="hover:text-brand-teal transition-colors py-2">Contact</a>
         </nav>
 
         <!-- Right Action Buttons -->
@@ -179,7 +199,7 @@ const closeMobile = () => {
 
           <!-- Book Appointment Button -->
           <a 
-            href="#appointment"
+            :href="getSectionHref('#appointment')"
             class="inline-flex items-center gap-2 px-5 sm:px-5.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-brand-teal-dark hover:bg-brand-teal shadow-soft hover:shadow-card hover:-translate-y-0.5 active:translate-y-0 transition-all focus:outline-none focus:ring-2 focus:ring-brand-teal focus:ring-offset-2 whitespace-nowrap"
           >
             <Calendar class="w-4 h-4 text-brand-mint shrink-0" />
@@ -190,7 +210,7 @@ const closeMobile = () => {
         <!-- Mobile Menu Trigger -->
         <div class="flex items-center gap-2 lg:hidden">
           <a 
-            href="#appointment"
+            :href="getSectionHref('#appointment')"
             class="sm:hidden inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-medium text-white bg-brand-teal-dark"
           >
             Book
@@ -220,28 +240,43 @@ const closeMobile = () => {
     >
       <div 
         v-if="mobileMenuOpen"
-        class="lg:hidden absolute top-full left-0 w-full bg-white border-b border-brand-border shadow-card px-5 py-6 flex flex-col gap-4"
+        class="lg:hidden absolute top-full left-0 w-full bg-white border-b border-brand-border shadow-card px-5 py-6 flex flex-col gap-4 max-h-[85vh] overflow-y-auto"
       >
         <nav class="flex flex-col gap-3 text-base font-medium text-brand-charcoal">
-          <a href="#home" class="py-2 border-b border-brand-border/40 hover:text-brand-teal" @click="closeMobile">Home</a>
-          <a href="#about" class="py-2 border-b border-brand-border/40 hover:text-brand-teal" @click="closeMobile">About Us</a>
-          <a href="#treatments" class="py-2 border-b border-brand-border/40 hover:text-brand-teal flex justify-between items-center" @click="closeMobile">
+          <RouterLink to="/" class="py-2 border-b border-brand-border/40 hover:text-brand-teal" @click="closeMobile">Home</RouterLink>
+          <a :href="getSectionHref('#about')" class="py-2 border-b border-brand-border/40 hover:text-brand-teal" @click="closeMobile">About Us</a>
+          <a :href="getSectionHref('#treatments')" class="py-2 border-b border-brand-border/40 hover:text-brand-teal flex justify-between items-center" @click="closeMobile">
             <span>Treatments & Services</span>
             <span class="text-xs text-brand-teal font-normal bg-brand-mint px-2 py-0.5 rounded-full">Explore</span>
           </a>
-          <a href="#clinic" class="py-2 border-b border-brand-border/40 hover:text-brand-teal" @click="closeMobile">Patient Results (Before & After)</a>
-          <a href="#doctor" class="py-2 border-b border-brand-border/40 hover:text-brand-teal" @click="closeMobile">Meet The Doctor</a>
-          <a href="#reviews" class="py-2 border-b border-brand-border/40 hover:text-brand-teal flex justify-between items-center" @click="closeMobile">
+          <a :href="getSectionHref('#clinic')" class="py-2 border-b border-brand-border/40 hover:text-brand-teal" @click="closeMobile">Patient Results (Before & After)</a>
+          <a :href="getSectionHref('#doctor')" class="py-2 border-b border-brand-border/40 hover:text-brand-teal" @click="closeMobile">Meet The Doctor</a>
+          
+          <!-- Blog Link in Mobile Menu -->
+          <RouterLink to="/blog" class="py-2 border-b border-brand-border/40 hover:text-brand-teal flex justify-between items-center" @click="closeMobile">
+            <span class="font-bold text-brand-teal-dark flex items-center gap-2">
+              <BookOpen class="w-4 h-4 text-brand-teal" />
+              <span>Dental Blog & Guides</span>
+            </span>
+            <span class="text-xs text-white bg-brand-teal px-2 py-0.5 rounded-full">New</span>
+          </RouterLink>
+
+          <!-- Admin Link in Mobile Menu -->
+          <RouterLink to="/admin" class="py-2 border-b border-brand-border/40 hover:text-brand-teal text-xs text-brand-muted" @click="closeMobile">
+            Doctor / Staff Admin Portal
+          </RouterLink>
+
+          <a :href="getSectionHref('#reviews')" class="py-2 border-b border-brand-border/40 hover:text-brand-teal flex justify-between items-center" @click="closeMobile">
             <span>Patient Reviews</span>
             <span class="text-xs text-brand-teal font-normal bg-brand-mint px-2 py-0.5 rounded-full">4.9 ★ Google</span>
           </a>
-          <a href="#faq" class="py-2 border-b border-brand-border/40 hover:text-brand-teal" @click="closeMobile">FAQs</a>
-          <a href="#contact" class="py-2 hover:text-brand-teal" @click="closeMobile">Location & Contact</a>
+          <a :href="getSectionHref('#faq')" class="py-2 border-b border-brand-border/40 hover:text-brand-teal" @click="closeMobile">FAQs</a>
+          <a :href="getSectionHref('#contact')" class="py-2 hover:text-brand-teal" @click="closeMobile">Location & Contact</a>
         </nav>
 
         <div class="pt-3 flex flex-col gap-2.5">
           <a 
-            href="#appointment"
+            :href="getSectionHref('#appointment')"
             class="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-brand-teal-dark text-white font-medium shadow-soft text-sm"
             @click="closeMobile"
           >

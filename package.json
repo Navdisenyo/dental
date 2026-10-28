@@ -14,7 +14,8 @@
     "gsap": "^3.15.0",
     "lucide-vue-next": "^1.0.0",
     "three": "^0.186.1",
-    "vue": "^3.5.44"
+    "vue": "^3.5.44",
+    "vue-router": "^4.6.4"
   },
   "devDependencies": {
     "@types/canvas-confetti": "^1.9.0",

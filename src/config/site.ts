@@ -395,7 +395,7 @@ export const siteConfig: SiteConfig = {
       category: "orthodontics",
       categoryLabel: "Orthodontics & Arch Leveling",
       patientTag: "Arch Expansion & Alignment",
-      image: "/assets/transformations/case-4-youth-crowding.jpg",
+      image: "/assets/transformations/case-4-arch-expansion.jpg",
       treatment: "Orthodontic Alignment & Arch Development",
       duration: "10 Months",
       concern: "Constricted dental arch with rotated central incisors and dark buccal corridors on smiling.",
